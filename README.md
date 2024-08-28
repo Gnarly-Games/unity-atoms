@@ -30,67 +30,29 @@ Unity Atoms is an open source library that aims to make your game code:
 
 ## Installation
 
-### NPM
+### Package Manager -> Git URL
 
 _Prerequisite: Since Unity Atoms is using the Unity Package Manager (UPM) you need to use Unity version 2018.3 >=_
 
-Add the following to your `manifest.json` (which is located under your project location in the folder `Packages`):
+Use the following URL template for the needed subpackage, remove everything after ".git?" to full instalation.
 
 ```
-{
-    "scopedRegistries": [
-        {
-            "name": "NPM Registry",
-            "url": "https://registry.npmjs.org",
-            "scopes": [
-                "com.unity-atoms.unity-atoms-core",
-                "com.unity-atoms.unity-atoms-base-atoms",
-                "com.unity-atoms.unity-atoms-fsm",
-                "com.unity-atoms.unity-atoms-mobile",
-                "com.unity-atoms.unity-atoms-mono-hooks",
-                "com.unity-atoms.unity-atoms-tags",
-                "com.unity-atoms.unity-atoms-scene-mgmt",
-                "com.unity-atoms.unity-atoms-ui",
-		        "com.unity-atoms.unity-atoms-input-system"
-            ]
-        }
-    ],
-    "dependencies": {
-        ...
-        "com.unity-atoms.unity-atoms-core": "4.5.0",
-        "com.unity-atoms.unity-atoms-base-atoms": "4.5.0",
-        "com.unity-atoms.unity-atoms-fsm": "4.5.0",
-        "com.unity-atoms.unity-atoms-mobile": "4.5.0",
-        "com.unity-atoms.unity-atoms-mono-hooks": "4.5.0",
-        "com.unity-atoms.unity-atoms-tags": "4.5.0",
-        "com.unity-atoms.unity-atoms-scene-mgmt": "4.5.0",
-        "com.unity-atoms.unity-atoms-ui": "4.5.0",
-	    "com.unity-atoms.unity-atoms-input-system": "4.5.0",
-        ...
-    }
-}
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/"selected_folder_name"
 ```
 
-Note that the core and base atoms packages are mandatory while the others are optional. If you don't want a subpackage, simply remove it from your `dependencies`.
-Note that subpackages may have additional dependencies.
-
-### OpenUPM
-
-The package is available on the [openupm registry](https://openupm.com). It's recommended to install it via [openupm-cli](https://github.com/openupm/openupm-cli).
-
 ```
-# required
-openupm add com.unity-atoms.unity-atoms-core
-openupm add com.unity-atoms.unity-atoms-base-atoms
+# required in order
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/Core
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/BaseAtoms
 
 # optional
-openupm add com.unity-atoms.unity-atoms-fsm
-openupm add com.unity-atoms.unity-atoms-mobile
-openupm add com.unity-atoms.unity-atoms-mono-hooks
-openupm add com.unity-atoms.unity-atoms-tags
-openupm add com.unity-atoms.unity-atoms-scene-mgmt
-openupm add com.unity-atoms.unity-atoms-ui
-openupm add com.unity-atoms.unity-atoms-input-system
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/FSM
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/InputSystem
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/Mobile
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/MonoHooks
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/SceneMgmt
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/Tags
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/UI
 ```
 
 ## Documentation
