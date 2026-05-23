@@ -1,3 +1,7 @@
+---
+id: "Readme"
+title: "Table of Contents"
+---
 # Table of Contents
 
 -   Introduction
@@ -10,6 +14,7 @@
     -   [Creating Atoms](./tutorials/creating-atoms.md)
     -   [Variables](./tutorials/variables.md)
     -   [Variable Pre Change Transformers](./tutorials/variable-transformers.md)
+    -   [Value Lists](./tutorials/value-lists.md)
     -   [Events](./tutorials/events.md)
     -   [Listeners](./tutorials/listeners.md)
     -   [Actions](./tutorials/actions.md)

@@ -9,11 +9,12 @@
     ],
     "Tutorials": [
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Basics",
-        "ids": [
+        "items": [
           "tutorials/creating-atoms",
           "tutorials/variables",
+          "tutorials/value-lists",
           "tutorials/events",
           "tutorials/listeners",
           "tutorials/actions",
@@ -21,9 +22,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Intermediate",
-        "ids": [
+        "items": [
           "tutorials/variable-transformers",
           "tutorials/variable-instancer",
           "tutorials/event-instancer",
@@ -32,9 +33,9 @@
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Advanced",
-        "ids": [
+        "items": [
           "tutorials/advanced-example",
           "tutorials/unirx"
         ]
