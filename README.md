@@ -42,17 +42,17 @@ https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/"selected_folder_
 
 ```
 # required in order
-https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/Core
-https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/BaseAtoms
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/Core#v5.0.0
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/BaseAtoms#v5.0.0
 
 # optional
-https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/FSM
-https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/InputSystem
-https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/Mobile
-https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/MonoHooks
-https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/SceneMgmt
-https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/Tags
-https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/UI
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/FSM#v5.0.0
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/InputSystem#v5.0.0
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/Mobile#v5.0.0
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/MonoHooks#v5.0.0
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/SceneMgmt#v5.0.0
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/Tags#v5.0.0
+https://github.com/Gnarly-Games/unity-atoms.git?path=/Packages/UI#v5.0.0
 ```
 
 ## Documentation
