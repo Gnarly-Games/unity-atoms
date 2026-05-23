@@ -8,14 +8,14 @@ namespace UnityAtoms.BaseAtoms
     [Serializable]
     public struct Collision2DPair : IPair<UnityEngine.Collision2D>
     {
-        public UnityEngine.Collision2D Item1 { get => _item1; set => _item1 = value; }
-        public UnityEngine.Collision2D Item2 { get => _item2; set => _item2 = value; }
+        public UnityEngine.Collision2D Value { get => _value; set => _value = value; }
+        public UnityEngine.Collision2D OldValue { get => _oldValue; set => _oldValue = value; }
 
         [SerializeField]
-        private UnityEngine.Collision2D _item1;
+        private UnityEngine.Collision2D _value;
         [SerializeField]
-        private UnityEngine.Collision2D _item2;
+        private UnityEngine.Collision2D _oldValue;
 
-        public void Deconstruct(out UnityEngine.Collision2D item1, out UnityEngine.Collision2D item2) { item1 = Item1; item2 = Item2; }
+        public void Deconstruct(out UnityEngine.Collision2D item1, out UnityEngine.Collision2D item2) { item1 = Value; item2 = OldValue; }
     }
 }

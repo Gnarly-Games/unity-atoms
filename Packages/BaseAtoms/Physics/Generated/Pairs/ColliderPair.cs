@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 namespace UnityAtoms.BaseAtoms
 {
     /// <summary>
@@ -8,14 +10,14 @@ namespace UnityAtoms.BaseAtoms
     [Serializable]
     public struct ColliderPair : IPair<UnityEngine.Collider>
     {
-        public UnityEngine.Collider Item1 { get => _item1; set => _item1 = value; }
-        public UnityEngine.Collider Item2 { get => _item2; set => _item2 = value; }
+        public UnityEngine.Collider Value { get => value; set => this.value = value; }
+        public UnityEngine.Collider OldValue { get => oldValue; set => oldValue = value; }
 
-        [SerializeField]
-        private UnityEngine.Collider _item1;
-        [SerializeField]
-        private UnityEngine.Collider _item2;
+        [FormerlySerializedAs("_item1"),SerializeField]
+        private UnityEngine.Collider value;
+        [FormerlySerializedAs("_item2"),SerializeField]
+        private UnityEngine.Collider oldValue;
 
-        public void Deconstruct(out UnityEngine.Collider item1, out UnityEngine.Collider item2) { item1 = Item1; item2 = Item2; }
+        public void Deconstruct(out UnityEngine.Collider item1, out UnityEngine.Collider item2) { item1 = Value; item2 = OldValue; }
     }
 }
