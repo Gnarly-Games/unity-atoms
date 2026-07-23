@@ -31,6 +31,34 @@ namespace UnityAtoms.Editor
             RefreshDropdown();
         }
 
+        private static Assembly TryLoadAssembly(string name)
+        {
+            try
+            {
+                return Assembly.Load(name);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        private static IEnumerable<Type> GetSafeExportedTypes(Assembly assembly)
+        {
+            try
+            {
+                return assembly.GetExportedTypes();
+            }
+            catch (ReflectionTypeLoadException e)
+            {
+                return e.Types.Where(t => t != null);
+            }
+            catch
+            {
+                return Enumerable.Empty<Type>();
+            }
+        }
+
         private void CheckTypeSafety()
         {
             var currentType = Type.GetType(_fullQualifiedName.stringValue);
@@ -44,9 +72,9 @@ namespace UnityAtoms.Editor
             }
             else
             {
-                var assemblies = from assemblyDefinition in CompilationPipeline.GetAssemblies(AssembliesType.Player)
-                                 let assembly = Assembly.Load(assemblyDefinition.name)
-                                 select assembly;
+                var assemblies = CompilationPipeline.GetAssemblies(AssembliesType.Player)
+                    .Select(a => TryLoadAssembly(a.name))
+                    .Where(a => a != null);
                 _safeSearch = assemblies.Contains(currentType.Assembly);
             }
         }
@@ -58,9 +86,9 @@ namespace UnityAtoms.Editor
                 IEnumerable<Assembly> assemblies;
                 if (_safeSearch)
                 {
-                    assemblies = from assemblyDefinition in CompilationPipeline.GetAssemblies(AssembliesType.Player)
-                                 let assembly = Assembly.Load(assemblyDefinition.name)
-                                 select assembly;
+                    assemblies = CompilationPipeline.GetAssemblies(AssembliesType.Player)
+                        .Select(a => TryLoadAssembly(a.name))
+                        .Where(a => a != null);
                 }
                 else
                 {
@@ -69,7 +97,7 @@ namespace UnityAtoms.Editor
 
                 var types = from assembly in assemblies
                             where !assembly.IsDynamic
-                            from type in assembly.GetExportedTypes()
+                            from type in GetSafeExportedTypes(assembly)
                             where !type.IsGenericType
                             where !type.IsAbstract
                             select type;
