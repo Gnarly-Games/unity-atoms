@@ -1,7 +1,7 @@
 {
   "name": "com.unity-atoms.unity-atoms-scene-mgmt",
   "displayName": "Unity Atoms Scene Mgmt",
-  "version": "5.0.4",
+  "version": "5.0.5",
   "unity": "2022.2",
   "description": "Unity Atoms to manage your scenes.",
   "keywords": [
@@ -20,7 +20,7 @@
     "/Documentation.meta"
   ],
   "dependencies": {
-    "com.unity-atoms.unity-atoms-core": "5.0.4",
-    "com.unity-atoms.unity-atoms-base-atoms": "5.0.4"
+    "com.unity-atoms.unity-atoms-core": "5.0.5",
+    "com.unity-atoms.unity-atoms-base-atoms": "5.0.5"
   }
 }
