@@ -1,9 +1,9 @@
 {
   "name": "com.unity-atoms.unity-atoms-tags",
   "displayName": "Unity Atoms Tags",
-  "version": "5.0.0",
+  "version": "5.0.4",
   "unity": "2022.2",
-  "description": "A replacement to Unity´s tags based on Unity Atoms.",
+  "description": "A replacement to Unity\u00b4s tags based on Unity Atoms.",
   "keywords": [
     "scriptable objects",
     "unity"
@@ -18,7 +18,7 @@
     "/Documentation.meta"
   ],
   "dependencies": {
-    "com.unity-atoms.unity-atoms-core": "5.0.0",
-    "com.unity-atoms.unity-atoms-base-atoms": "5.0.0"
+    "com.unity-atoms.unity-atoms-core": "5.0.4",
+    "com.unity-atoms.unity-atoms-base-atoms": "5.0.4"
   }
 }
