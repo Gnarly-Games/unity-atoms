@@ -1,7 +1,7 @@
 {
   "name": "com.unity-atoms.unity-atoms",
   "displayName": "Unity Atoms",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },

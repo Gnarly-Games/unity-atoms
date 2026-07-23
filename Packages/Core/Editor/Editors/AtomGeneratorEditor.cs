@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEditor.Compilation;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
-using Assembly = System.Reflection.Assembly;
+using System.Reflection;
 using Object = UnityEngine.Object;
 
 namespace UnityAtoms.Editor
