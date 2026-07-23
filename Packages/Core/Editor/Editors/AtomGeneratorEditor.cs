@@ -53,38 +53,45 @@ namespace UnityAtoms.Editor
 
         public void RefreshDropdown()
         {
-            IEnumerable<Assembly> assemblies;
-            if (_safeSearch)
+            try
             {
-                assemblies = from assemblyDefinition in CompilationPipeline.GetAssemblies(AssembliesType.Player)
-                             let assembly = Assembly.Load(assemblyDefinition.name)
-                             select assembly;
-            }
-            else
-            {
-                assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            }
+                IEnumerable<Assembly> assemblies;
+                if (_safeSearch)
+                {
+                    assemblies = from assemblyDefinition in CompilationPipeline.GetAssemblies(AssembliesType.Player)
+                                 let assembly = Assembly.Load(assemblyDefinition.name)
+                                 select assembly;
+                }
+                else
+                {
+                    assemblies = AppDomain.CurrentDomain.GetAssemblies();
+                }
 
-            var types = from assembly in assemblies
-                        where !assembly.IsDynamic
-                        from type in assembly.GetExportedTypes()
-                        where !type.IsGenericType
-                        where !type.IsAbstract
-                        select type;
+                var types = from assembly in assemblies
+                            where !assembly.IsDynamic
+                            from type in assembly.GetExportedTypes()
+                            where !type.IsGenericType
+                            where !type.IsAbstract
+                            select type;
 
-            if (_safeSearch)
-            {
-                types = from type in types
-                        where type.IsUnitySerializable()
-                        select type;
+                if (_safeSearch)
+                {
+                    types = from type in types
+                            where type.IsUnitySerializable()
+                            select type;
+                }
+
+                _typeSelectorDropdown = new TypeSelectorDropdown(types, selectedType =>
+                {
+                    serializedObject.Update();
+                    _fullQualifiedName.stringValue = selectedType.AssemblyQualifiedName;
+                    serializedObject.ApplyModifiedProperties();
+                });
             }
-
-            _typeSelectorDropdown = new TypeSelectorDropdown(types, selectedType =>
+            catch (Exception e)
             {
-                serializedObject.Update();
-                _fullQualifiedName.stringValue = selectedType.AssemblyQualifiedName;
-                serializedObject.ApplyModifiedProperties();
-            });
+                Debug.LogError($"[UnityAtoms] Failed to refresh type selector dropdown: {e.Message}");
+            }
         }
 
         public override void OnInspectorGUI()
@@ -128,7 +135,11 @@ namespace UnityAtoms.Editor
 
             if (GUI.Button(buttonRect, buttonContent))
             {
-                _typeSelectorDropdown.Show(dropdownRect);
+                if (_typeSelectorDropdown == null)
+                {
+                    RefreshDropdown();
+                }
+                _typeSelectorDropdown?.Show(dropdownRect);
             }
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.PropertyField(_fullQualifiedName);
