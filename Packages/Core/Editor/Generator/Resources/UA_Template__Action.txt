@@ -1,5 +1,6 @@
 <%IF TYPE_HAS_NAMESPACE%>
 using {TYPE_NAMESPACE};
+using UnityAtoms;
 
 <%ENDIF%>
 <%IF HAS_SUB_UA_NAMESPACE%>

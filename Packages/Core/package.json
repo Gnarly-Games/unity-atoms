@@ -1,7 +1,7 @@
 {
   "name": "com.unity-atoms.unity-atoms-core",
   "displayName": "Unity Atoms Core",
-  "version": "5.0.5",
+  "version": "5.0.6",
   "unity": "2022.2",
   "description": "Tiny modular pieces utilizing the power of Scriptable Objects",
   "keywords": [

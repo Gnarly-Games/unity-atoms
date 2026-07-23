@@ -1,4 +1,5 @@
 using System;
+using UnityAtoms;
 <%IF TYPE_HAS_NAMESPACE%>using {TYPE_NAMESPACE};<%ENDIF%>
 
 <%IF HAS_SUB_UA_NAMESPACE%>

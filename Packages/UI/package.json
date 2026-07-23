@@ -1,7 +1,7 @@
 {
   "name": "com.unity-atoms.unity-atoms-ui",
   "displayName": "Unity Atoms UI",
-  "version": "5.0.5",
+  "version": "5.0.6",
   "unity": "2022.2",
   "description": "UI system using Unity Atoms.",
   "keywords": [
@@ -18,7 +18,7 @@
     "/Documentation.meta"
   ],
   "dependencies": {
-    "com.unity-atoms.unity-atoms-core": "5.0.5",
-    "com.unity-atoms.unity-atoms-base-atoms": "5.0.5"
+    "com.unity-atoms.unity-atoms-core": "5.0.6",
+    "com.unity-atoms.unity-atoms-base-atoms": "5.0.6"
   }
 }
