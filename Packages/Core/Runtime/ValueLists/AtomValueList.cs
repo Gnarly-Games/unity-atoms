@@ -60,6 +60,9 @@ namespace UnityAtoms
 #if UNITY_EDITOR
             _instances.Add(this);
 
+             if (EditorApplication.isPlayingOrWillChangePlaymode)
+                _initial = list.ToList();
+
             EditorApplication.playModeStateChanged -= HandlePlayModeStateChange;
             EditorApplication.playModeStateChanged += HandlePlayModeStateChange;
 #endif
